@@ -5,7 +5,7 @@
       <ul>
         <li v-for="link in links" :key="link.id">
           <a :href="link.url" v-if="!link.isHighlight">{{ link.name }}</a>
-          <a :href="link.url" v-else :class="{ highlight: !isHighlight }">{{
+          <a :href="link.url" v-else :class="{ highlight: high }">{{
             link.name
           }}</a>
         </li>
@@ -55,6 +55,7 @@ export default {
         url: "",
         isHighlight: false,
       },
+      high: true,
     };
   },
   methods: {
@@ -87,9 +88,10 @@ form {
   max-width: 30%;
 }
 .highlight {
-  color: "blue";
-  font-size: "25px";
-  text-decoration: "none";
+  color: red;
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: none;
 }
 button {
   padding: 1rem 0;
